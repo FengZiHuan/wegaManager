@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Transaction name="dictionary" caption="" version="1.0" description="">
+	<actionflow id="">
+		<action id="0" type="begin"/>
+		
+		<action id="1" type="service">
+			<param name="clazz">
+				  com.nantian.iwap.action.common.DictionaryAction  
+			</param>
+		</action>
+		<action id="2" type="json">
+			<param name="paramType">
+				result
+			</param>
+		</action>
+		
+		<action id="3" type="end"/>
+	</actionflow>
+</Transaction>
+

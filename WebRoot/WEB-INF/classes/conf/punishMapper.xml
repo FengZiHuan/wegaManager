@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.nantian.iwap.system.app">
+     <select id="queryPunishInfoWithPage" resultType="java.util.Map">
+         select USER_ID,USER_NAME, DEPARTMENT, FMIS_NO, PUNISH_MATTER, PUNISH_GRADE, to_char(DATE_ARRIVE,'yyyy-MM-dd') DATE_ARRIVE,STOP_PAYMENT_SALARY,STOP_PAYMENT_SUM,
+         PUNISH_MONTH_SUM, to_char(BEGIN_DATE,'yyyy-MM-dd') BEGIN_DATE, to_char(END_DATE,'yyyy-MM-dd') END_DATE, PUNISH_BASIS,STOP_JX_FLAG,STOP_NJ_FLAG, REMARK,EXECUTE_MONTH,
+         YFJXGZ,BYTFJE,SJYFJXGZ,JTYQ,NFJXGZZE from punishInfo 
+         <where>  
+	        <if test="userName !=null and userName !=''">
+	            USER_NAME like '%${userName}%'
+	        </if>  
+	        <if test="department !=null and department !=''">  
+	            and DEPARTMENT=#{department}
+	        </if>  
+	        <if test="beginDate !=null and beginDate !=''">  
+	            AND BEGIN_DATE&gt;=to_date(#{beginDate}, 'yyyy-MM-dd')
+	        </if> 
+	        <if test="endDate !=null and endDate !=''">  
+	            and END_DATE&lt;=to_date(#{endDate}, 'yyyy-MM-dd')
+	        </if> 
+        </where>
+     </select>
+     
+     <select id="existPunishInfo" resultType="java.util.Map">
+         select * from punishInfo 
+         <where>  
+	        <if test="userName !=null and userName !=''">
+	            USER_NAME like '%${userName}%'
+	        </if>  
+	        <if test="fmisNo !=null and fmisNo !=''">  
+	            and FMIS_NO=#{fmisNo}
+	        </if>  
+        </where>
+     </select>
+     
+     <insert id="insertPunishInfo">
+     	insert into punishInfo (USER_NAME, DEPARTMENT, FMIS_NO, PUNISH_MATTER, PUNISH_GRADE, DATE_ARRIVE,STOP_PAYMENT_SALARY, PUNISH_MONTH_SUM, BEGIN_DATE, END_DATE, PUNISH_BASIS,STOP_JX_FLAG,STOP_NJ_FLAG, REMARK,BYTFJE,JTYQ,NFJXGZZE,YTFJXGZZE,DTFJXGZZE)
+		values (#{USER_NAME}, #{DEPARTMENT}, #{FMIS_NO}, #{PUNISH_MATTER}, #{PUNISH_GRADE}, to_date(#{DATE_ARRIVE}, 'yyyy-MM-dd'),#{STOP_PAYMENT_SALARY},#{PUNISH_MONTH_SUM}, to_date(#{BEGIN_DATE}, 'yyyy-MM'), to_date(#{END_DATE}, 'yyyy-MM'),
+		 #{PUNISH_BASIS},#{STOP_JX_FLAG}, #{STOP_NJ_FLAG}, #{REMARK},#{BYTFJE}, #{JTYQ}, #{NFJXGZZE}, #{YTFJXGZZE}, #{DTFJXGZZE})
+     </insert>
+
+     <delete id="delPunish">
+        <if test="list.size>0">
+     	
+     	<![CDATA[delete from punishInfo where USER_ID in (
+     	]]>
+     	<foreach collection="list" item ="item" index ="index" separator=",">
+     	 #{item}
+     	</foreach>
+     	<![CDATA[)
+     	]]>
+     	</if>
+     </delete>
+	 <select id="queryStopSalary" resultType="java.util.Map">
+         select STOP_PAYMENT_SALARY,STOP_JX_FLAG,STOP_NJ_FLAG,NFJXGZZE from punishInfo where USER_ID=#{USER_ID}
+     </select>
+
+	<delete id="delPunishmentAccount">
+			delete from sys_punishment_account where FMIS_NO =#{FMIS_NO}
+	</delete>
+	
+	<delete id="delPunishByFmisNo">
+			delete from punishInfo where FMIS_NO =#{FMIS_NO}
+	</delete>
+ </mapper>

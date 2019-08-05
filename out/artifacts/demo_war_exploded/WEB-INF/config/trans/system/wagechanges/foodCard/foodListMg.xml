@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Transaction name="foodListMg" caption="" version="1.0"
+	description="">
+	<actionflow id="">
+		<actions>
+			<action id="start" type="begin"></action>
+			<action id="viewPage" type="view">
+				<param name="page">screen/system/wagechanges/foodCard/foodListMg.jsp</param>
+				<param name="paramType">result</param>
+			</action>
+			<action id="doBiz" class="com.nantian.iwap.action.wagechanges.foodCard.FoodListMgAction">
+				<param name="insertSqlId">
+					insertUser
+				</param>
+			</action>
+			<action id="subBiz" type="subFlow">
+				<param name="txcode">exportData</param>
+			</action>
+			<action id="ret" type="json">
+				<param name="paramType">result</param>
+			</action>
+			<action id="end" type="end" />
+		</actions>
+		<connections>
+			<connection id="connection0" from="start" to="viewPage" />
+			<connection id="connection1" from="viewPage" to="doBiz" />
+			<connection id="connection2" from="doBiz" to="subBiz" />
+			<connection id="connection3" from="subBiz" to="ret" />
+			<connection id="connection4" from="ret" to="end" />
+		</connections>
+	</actionflow>
+</Transaction>

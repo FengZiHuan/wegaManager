@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigList>
+	<!-- Web资源相关配置 -->
+	<ConfigItem name="WebEnv" type="static"
+		class="com.nantian.iwap.web.WebEnv"
+		description="Web资源相关配置">
+		<parameter>
+			<param-name>viewPath</param-name>
+			<param-value>
+				WEB-INF/views/
+			</param-value>
+		</parameter>
+		<parameter>
+			<param-name>webappPath</param-name>
+            <param-value>H:/Nongh/demo/WebRoot/</param-value>
+
+		</parameter>
+	</ConfigItem>
+	
+	<!-- 校验配置 -->
+	<ConfigItem name="ValidatorFactory" type="single"
+		class="com.nantian.iwap.databus.validator.ValidatorFactory"
+		description="校验配置" factoryMethod="getValidatorFactory"
+		initialMethod="init">
+		<parameter>
+			<param-name>filename</param-name>
+			<param-value>
+				WEB-INF/config/validator.xml
+			</param-value>
+		</parameter>
+	</ConfigItem>
+	<!-- 交易校验配置 -->
+	<ConfigItem name="ValidationFactory" type="single"
+		class="com.nantian.iwap.core.ValidationFactory"
+		description="校验配置" factoryMethod="getValidationFactory"
+		initialMethod="init">
+		<parameter>
+			<param-name>filename</param-name>
+			<param-value>
+				WEB-INF/config/transValidator.xml
+			</param-value>
+		</parameter>
+	</ConfigItem>
+	<!-- 交易Action定义 -->
+	<ConfigItem name="ActionDef" type="single"
+		class="com.nantian.iwap.biz.ActionDefinition"
+		description="交易配置" factoryMethod="getInstance"
+		initialMethod="init">
+		<parameter>
+			<param-name>actionDefFile</param-name>
+			<param-value>
+				WEB-INF/config/ActionDefinition.xml
+			</param-value>
+		</parameter>
+	</ConfigItem>
+	<!-- 交易配置 -->
+	<ConfigItem name="BizFlowManager" type="single"
+		class="com.nantian.iwap.biz.BizFlowManager"
+		description="交易配置" factoryMethod="getBizFlowManager"
+		initialMethod="init">
+		<parameter>
+			<param-name>filename</param-name>
+			<param-value>
+				WEB-INF/config/translist.xml
+			</param-value>
+		</parameter>
+	</ConfigItem>
+	
+	
+	<!-- 数据源相关配置 -->
+	<ConfigItem name="DBAccessConfig" type="single"
+		class="com.nantian.iwap.persistence.DBAccessConfig"
+		description="数据源相关配置" factoryMethod="getDBAccessConfig"
+		initialMethod="init">
+		<parameter>
+			<param-name>DBSourceFile</param-name>
+			<param-value>
+			WEB-INF/config/dbsource.xml
+			</param-value>
+		</parameter>
+	</ConfigItem>
+	<!-- 交易信息缓存 -->
+	<ConfigItem name="transCache" type="single"
+		class="com.nantian.iwap.persistence.sync.TransCacheFactory" description="交易信息缓存配置"
+		factoryMethod="getTransCache" initialMethod="init">
+	</ConfigItem>
+	<!-- 系统上下文参数 -->
+	<ConfigItem name="AppctionContext" type="single"
+		class="com.nantian.iwap.databus.ApplicationContext"
+		description="系统上下文参数" factoryMethod="getInstance"
+		initialMethod="init">
+		<parameter>
+			<param-name>filename</param-name>
+			<param-value>
+				WEB-INF/config/SystemParameter.xml
+			</param-value>
+		</parameter>
+	</ConfigItem>
+	<!-- 数据映射字典 -->
+	<ConfigItem name="DataMapDictionary" type="single"
+		class="com.nantian.ofpiwap.common.DataMapDictionary"
+		description="数据映射字典" factoryMethod="getInstance"
+		initialMethod="init">
+		<parameter>
+			<param-name>dictionaryfile</param-name>
+			<param-value>
+				WEB-INF/config/DataMapDictionary.xml
+			</param-value>
+		</parameter>
+	</ConfigItem>
+
+	<ConfigItem name="iwapBatis" description="IWAP-Mybatis初始化" type="single" class="com.nantian.iwap.ibatis.IWAPBatisFactory" 
+		factoryMethod="getInstance" initialMethod="init">
+		<parameter>
+			<param-name>dbType</param-name>
+			<param-value>
+				oracle
+			</param-value>
+		</parameter>
+		<parameter paraType="array">
+			<param-value>
+				conf/systemMapper.xml
+			</param-value>
+			<param-value>
+				conf/roleMapper.xml
+			</param-value>
+			<param-value>
+				conf/punishMapper.xml
+			</param-value>
+		</parameter>
+	</ConfigItem>
+	
+	<ConfigItem name="OutputFormat" description="查询数据输出格式" type="single" class="com.nantian.iwap.biz.util.OutputFormatFactory" 
+		factoryMethod="getInstance" initialMethod="init">
+		<parameter>
+			<param-name>filename</param-name>
+			<param-value>WEB-INF/config/DataFormat.xml</param-value>
+		</parameter>
+	</ConfigItem>
+	
+	
+	<ConfigItem name="impDataFactory" description="ImpDataFactory初始化" type="single" class="com.nantian.iwap.app.imp.ImpDataFactory" 
+		factoryMethod="getInstance" initialMethod="init">
+		<parameter>
+			<param-name>impSqlStr</param-name>
+			<param-value>SELECT * FROM sys_imp_cfg c,sys_imp_cfg_dtl d WHERE c.imp_id=d.imp_id order by d.imp_id asc,d.Sort_Val asc</param-value>
+		</parameter>
+		<parameter paraType="array">
+			<param-value>
+				xls_com.nantian.iwap.app.imp.impl.ImportExcel
+			</param-value>
+			<param-value>
+				xlsx_com.nantian.iwap.app.imp.impl.ImportExcel
+			</param-value>
+		</parameter>
+	</ConfigItem>
+	
+	<ConfigItem name="expDataFactory" description="ExpDataFactory初始化" type="single" class="com.nantian.iwap.app.exp.ExpDataFactory" 
+		factoryMethod="getInstance" initialMethod="init">
+		<parameter>
+			<param-name>maxLine</param-name>
+			<param-value>10000</param-value>
+		</parameter>
+		<parameter paraType="array">
+			<param-value>
+				xls_com.nantian.iwap.app.exp.impl.ExportExcel
+			</param-value>
+			<param-value>
+				xlsx_com.nantian.iwap.app.exp.impl.ExportExcel
+			</param-value>
+		</parameter>
+	</ConfigItem>
+ 
+	<!-- 上传参数配置 -->
+	<ConfigItem name="UploadConfig" type="static"
+		class="com.nantian.iwap.web.upload.UploadConfig"
+		description="上传配置">
+		<parameter>
+			<param-name>tempPath</param-name>
+			<param-value>
+
+				H:/Nongh/demo/WebRoot/upload/
+			</param-value>
+		</parameter>
+		<parameter>
+			<param-name>fileSize</param-name>
+			<param-value>1024000</param-value>
+		</parameter>
+	</ConfigItem>
+</ConfigList>

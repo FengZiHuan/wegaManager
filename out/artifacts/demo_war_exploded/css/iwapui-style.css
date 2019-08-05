@@ -1,0 +1,282 @@
+﻿@charset "UTF-8";
+/*
+ * @date    2015-05-05 17:08:43
+ * @version 1.1
+ */
+ body{ }
+ .iwapui input,.iwapui select,.iwapui table.border1,.iwapui textarea{border: 1px #ccc solid; border-radius: 4px;}
+ .iwapui .w500{width: 500px;}
+ .iwapui .mb6{margin-bottom: 6px;}
+ .iwapui .pad20{padding: 20px;}
+ .iwapui .padl120{padding-left: 120px;}
+ .iwapui .ml300{margin-left: 300px;}
+ .iwapui .inputbox{display: inline-block;}
+ .iwapui .line32{height: 32px; line-height: 32px;}
+ .iwapui .linelist .tl,
+ .iwapui .tl{text-align: left;}
+ .iwapui .tc{text-align: center;}
+ .iwapui .pr{position: relative;}
+ .iwapui .pa{position: absolute;}
+ .iwapui .fl{float: left;}
+ .iwapui .fr{float: right;}
+ .iwapui .fb{font-weight: bold;}
+ .iwapui .margin0{margin: 0;}
+ .iwapui .mr30{margin-right: 30px;}
+ .iwapui .twohalf>div{width: 48%; text-align: center; display: inline-block;}
+ .iwapui .twohalf .inputbox .input_text{width: 60%;}
+ .iwapui .twohalf .inputbox .input_text_valid{width: 60%;}
+ .iwapui .threehalf>div{width: 32%; text-align: center;}
+ .iwapui .threehalf .inputbox .input_text{width: 60%;}
+ body.iwapui .mt40{margin-top: 40px;}
+ body.iwapui .mt50{margin-top: 50px;}
+ body.iwapui .mt120{margin-top: 120px;}
+ .iwapui .mr60{margin-right: 60px;}
+ .iwapui .mb14{margin-bottom: 14px;}
+ .iwapui .marginauto{margin: 26px auto 0 auto; width: 200px;}
+ .iwapui .marginauto500{margin: 0 auto; width: 500px;}
+ .iwapui .marginauto600{margin: 0 auto; width: 600px;}
+ .iwapui a{color: #000; text-decoration: none;};
+ .iwapui a:hover{color:#FC0303; text-decoration: none;}
+ .iwapui .clearfix:after { content: "."; height: 0; display: block; clear: both; zoom:1; visibility: hidden;}
+ .iwapui * html .clearfix {height: 1%;}
+ .iwapui .err_status{margin: 0 4px 0 5px; color: #FC0303; font-size: 12px; font-weight: bold; float: right; padding-top: 8px;}
+ .iwapui .err_status.pa{position: absolute; padding-top: 0;}
+/*输入框样式*/
+ .iwapui .inputbox{vertical-align:top;}
+ .iwapui .inputbox label{float:left;}
+ .iwapui .inputbox>span{  vertical-align: top; height: 32px; line-height: 32px; width: 84px; display: inline-block; text-align: right; overflow: hidden; margin-right: 5px;}
+ .iwapui .inputbox .input_text_valid{width: 290px; height: 28px;padding: 1px 5px; background-color: #fff; border: 1px solid #FF0000; }
+ .iwapui .inputbox .input_text{width: 300px; height: 28px;padding: 1px 5px; background-color: #fff;}
+ .iwapui .inputbox .tooltip { position: absolute; z-index: 100; display: block; font-size: 11px; line-height: 1.4; opacity: 1; visibility: visible;}
+ /*right tips*/
+ .iwapui .inputbox .tooltip.right { margin-right: -7px; right: 0; top: 8px; border:6px solid; border-color:transparent #FFFDC5 transparent transparent;}
+/*FOR IE11*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+ .iwapui .inputbox .tooltip.right { margin-right: -8px; right: 0; top: 8px; border:6px solid; border-color:transparent #FFFDC5 transparent transparent;} 
+}
+ .iwapui .inputbox .sm_tooltip_r {  border: 7px solid; border-color: transparent #FF0000 transparent transparent; position: absolute; top: 50%; margin-top: -9px; right: -7px;}
+ .iwapui .inputbox .tooltip_arrow_r { height: 28px; line-height: 28px; width: auto; left: 100%; margin-left: 6px; top: 0px; background: #FFFDC5; color: #000; padding: 0 12px; border-radius: 3px; white-space: nowrap; position: absolute; z-index: 99; border: 1px #FF0000 solid;}
+  /*bottom tips*/
+.iwapui .inputbox .tooltip.bottom { right: 0; top: 10px; border:6px solid; border-color:transparent #FFFDC5 transparent transparent;}
+.iwapui .inputbox .sm_tooltip_b{ border-width: 0 7px 7px; border-style: solid; border-color: transparent transparent #FF0000 transparent; width: 0; height: 0; position: absolute; top: 32px; left: 50%;}
+.iwapui .inputbox .tooltip_arrow_b{ height: 30px; line-height: 30px; width: auto; left: 100%; top: 0px; background: #FFFDC5; color: #000; padding: 0 12px; margin-right: 15px; border-radius: 3px; white-space: nowrap; z-index: 99; border: 1px #FF0000 solid;}
+/*后期添加的上下左提示框*/
+/* .iwapui .inputbox .tooltip.bottom { left: 50%; bottom: -6px; margin-left: -6px; border:6px solid; border-color:transparent transparent #33495F transparent; width: 0;}
+ .iwapui .inputbox .tooltip.top { left: 50%; top: -6px; margin-left: -6px; border:6px solid; border-color:#33495F transparent transparent transparent; width: 0;}
+ .iwapui .inputbox .tooltip.left { margin-left: -6px; left: 0; top: 10px; border:6px solid; border-color:transparent  transparent transparent #33495F;}
+ .iwapui .inputbox .tooltip_arrow_b { height: 30px; line-height: 30px; bottom: -35px; background: #33495F; color: #fff; padding: 0 12px; border-radius: 3px; white-space: nowrap; position: absolute; min-width: 278px; text-align: center; z-index: 99;}
+ .iwapui .inputbox .tooltip_arrow_t { height: 30px; line-height: 30px; top: -35px; background: #33495F; color: #fff; padding: 0 12px; border-radius: 3px; white-space: nowrap; position: absolute; min-width: 278px; text-align: center; z-index: 99;}
+ .iwapui .inputbox .tooltip_arrow_l { height: 30px; line-height: 30px; width: auto; right: 100%; margin-right: 6px; top: 0px; background: #33495F; color: #fff; padding: 0 12px; border-radius: 3px; white-space: nowrap; position: absolute; z-index: 99;}*/
+/*下拉框样式-原生*/
+ .iwapui .selectbox{position: relative; display: inline-block; _zoom:1;_display: inline;width:100%}
+ .iwapui .selectbox>span{  vertical-align: top; height: 32px; line-height: 32px;}
+ .iwapui .select_content{ border: 1px #ccc solid; width: 180px; height: 26px; line-height: 26px;}
+ .iwapui .selectbox label{display: inline-block; height: 30px; line-height: 30px; margin-right: 5px; vertical-align: middle; width: 84px; overflow: hidden; text-align: right; font-weight: normal;}
+ .select_content{ border: 1px #ccc solid; width: 180px; height: 26px; line-height: 26px;}
+/*.selectbox{float: left;}*/
+/*.selectbox .bg_box{width: 30px; height: 22px; background: #fff; position: absolute; right: 62px; top: 2px;}
+.selectbox .bg_box i{ width: 0; border: 5px solid; border-color:#000 transparent transparent transparent; position: absolute; top: 9px; left: 10px; cursor:pointer;}*/
+/*下拉框二(模拟，自定义方式)*/
+ .iwapui .selectbox .select_content_in{ border: 1px #ccc solid; width: 180px; height: 24px; line-height: 24px; cursor: pointer; padding: 0 16px 0 6px; background: url(images/triangle-bg.png) 179px 9px no-repeat; background-position: right 5px top 9px;}
+ .iwapui .select_list_box{border: 1px #ccc solid; border-radius: 5px; width: 180px; min-height: auto; max-height: 180px; overflow-y: auto; position: absolute; right: 0px; top: 24px; z-index: 99; background: #fff;}
+ .iwapui .select_list_box li{cursor: pointer; padding: 0 6px;}
+ .iwapui .select_list_box li.active{background: #1E90FF; color: #fff;}
+ .iwapui .select_list_box li:hover{background: #6FB8FF; color: #fff;} 
+/*下拉框三(模拟，多选下拉框方式-需要在上面二的基础上加上此)*/
+ .iwapui .selectbox .select_content_div{ border: 1px #ccc solid; width: 166px; height: 24px; line-height: 24px; cursor: pointer; padding: 0 16px 0 6px; background: url(images/triangle-bg.png) 165px 9px no-repeat; background-position: right 5px top 9px; display: inline-block; zoom:1; _display:inline; border-radius: 4px; margin-bottom: 10px; vertical-align: middle;}
+ .iwapui .selectbox .select_content_div>i{height: 100%; padding-right: 2px; border: 1px #A8B9FF solid; margin-right: 2px; display: inline-block; overflow: hidden; vertical-align: middle;}
+ .iwapui .selectbox .select_content_div>i>a{margin: 0 4px 0 2px; float: left;}
+ .iwapui .selectbox .select_content_div>i>a:hover{color: #FC0303; text-decoration: none;}
+ .iwapui .select_list_box li.on{background: #1E90FF; color: #fff;}
+/*普通按钮样式*/
+ .iwapui .buttonbox{float: left;}
+/*radio控件样式*/
+ .iwapui .radiobox input{vertical-align:baseline; margin-right: 4px;}
+/*tab控件样式*/
+ .iwapui .tab-content>div{display: none;}
+ .iwapui .tab-content>div.active{display: block;}
+ .iwapui .nav-tabs li{position: relative;}
+ .iwapui .nav-tabs>li.disable,.nav-tabs>li.disable>a{cursor: not-allowed;}
+ .iwapui .nav-tabs li i{position: absolute; top: 2px; right: 5px; font-size: 14px; cursor: pointer; color: #999;}
+ .iwapui .nav-tabs li i:hover{color: #FF4242;}
+ .iwapui .nav-tabs > li > a{padding-right: 19px;}
+ .iwapui .Rclick_menu{position: absolute; height: auto; z-index: 5; background: #E4EAFF; border: 1px #D3D3D3 solid; left: 12px; top: 28px; white-space: pre; padding: 5px;}
+ .iwapui .Rclick_menu a{display: block; cursor: pointer; height: 24px; line-height: 24px;}
+/*ME做的menu样式  */
+.iwapui .menubox{background:#EAEAEA; color: #fff; z-index: 99;}
+.menu_h2_icon{margin: -4px 8px 0px 8px; font-size: 18px; cursor: pointer; vertical-align: middle;}
+.menu_h2_icon_new{display: inline-block; margin: -5px 6px 0px 4px; height: 22px; width: 22px; cursor: pointer; vertical-align: middle; background:url(../images/menu-bg.png) no-repeat; }
+.pointer{cursor:pointer;}
+ .iwapui .menubox ul{padding: 0; margin: 0;}
+ .iwapui .menubox>ul{height: 30px;}
+ .iwapui .menubox>ul li{height: 30px; line-height: 30px; z-index: 99;}
+ .iwapui .menubox>ul>li>ul li{border-bottom: 1px solid #F9F9F9; background: #fff;}
+  .iwapui .menubox>ul>li>ul li:last-child{border-bottom: 0;}
+ .iwapui .menubox>ul li:hover,
+ .iwapui .menubox>ul li:hover>a{background: #366BFF; color: #fff;}
+ .iwapui .menubox>ul>li a{text-align: center; display: block; padding: 0 3px;}
+ .iwapui .menubox>ul>li a:hover{color: #fff;}
+/*  .iwapui .menubox>ul li{text-align: left;}*/
+ .iwapui .menubox>ul>li{float: left; position: relative; height: 30px; line-height: 30px; margin: 0 4px;}
+ .iwapui .menubox>ul>li ul{position: relative;}
+ .iwapui .menubox>ul>li ul li a{white-space: nowrap; text-overflow:ellipsis; overflow: hidden; display: block; padding: 0 5px; color: #000;}
+ .iwapui .menubox>ul>li>a>i{display: inline-block; border-width: 4px 4px 0; border-style: solid dashed dashed; border-color:#B3B0B0 transparent transparent transparent; margin-left: 6px; vertical-align:middle;}
+ .iwapui .menubox ul>li:hover>a>i{
+ 	-webkit-animation: animations .4s forwards;
+ 	-moz-animation: animations .4s forwards;
+ 	-0-animation: animations .4s forwards;
+ 	-ms-animation: animations .4s forwards;
+ 	animation: animations .4s forwards;
+ }
+  @-webkit-keyframes animations {
+ 	from {-webkit-transform:rotate(0)}
+ 	to {-webkit-transform:rotate(180deg)}
+ }
+  @-moz-keyframes animations {
+ 	from {-moz-transform:rotate(0)}
+ 	to {-moz-transform:rotate(180deg)}
+ }
+  @-o-keyframes animations {
+ 	from {-o-transform:rotate(0)}
+ 	to {-o-transform:rotate(180deg)}
+ }
+  @-ms-keyframes animations {
+ 	from {-ms-transform:rotate(0)}
+ 	to {-ms-transform:rotate(180deg)}
+ }
+ @keyframes animations {
+ 	from {transform:rotate(0)}
+ 	to {transform:rotate(180deg)}
+ }
+ .tree_menubox2 ul{margin: 0;}
+ .tree_menubox2 .ztree li a {
+    width: 200px;
+    height: 30px;
+    padding-top: 0px;
+    padding: 0 5px;
+    display: block;
+}
+.ztree li span.button {
+    line-height: 0;
+    display: inline-block;
+    vertical-align: middle;
+    border: 0 none;
+    cursor: pointer;
+    outline: none;
+}
+ /*ME做的menu样式 2*/
+ .iwapui .menubox>ul>li:hover>ul{visibility: visible;}
+ .iwapui .menubox>ul>li>ul{border: 1px #C7DFFF solid; visibility: hidden;}
+ .iwapui .menubox>ul>li>ul>li{position: relative;}
+ /*ME做的menu样式 3*/
+ .iwapui .menubox>ul>li>ul>li:hover>ul{visibility: visible;}
+ .iwapui .menubox>ul>li>ul>li ul{position: absolute; top: 0px; left: 100%; visibility: hidden; border: 1px #C7DFFF solid;}
+ .iwapui .menubox>ul>li>ul>li>ul>li{position: relative; width: 100%;}
+ /*ME做的menu样式 4*/
+ .iwapui .menubox>ul>li>ul>li>ul>li:hover>ul{visibility: visible;}
+ .iwapui .menubox>ul>li>ul>li>ul>li>ul>li{width: 100%;}
+ /*dialog*/
+ .iwapui .disabled_bg{width: 100%; height: 100%; background: #333; opacity: .7; position: absolute; top: 0; left: 0;}
+ /*上传文件样式*/
+#upfile{position: relative;margin-top:20px;height: 26px; text-align: center;}
+.upfilebox{ margin-bottom: 5px; height: 26px; display: inline-block; position: relative;}
+input.upfile{width: 100%; height: 26px; background: #e00; z-index: 5; position: absolute; top: 0; left: 0; opacity: 0; cursor:pointer;}
+.upfile_layout{ height: 26px; border-radius:6px;padding-left: 5px;padding-right: 5px; background: #33B7B1 url(../images/up.png) 35px 9px no-repeat;}
+.upfile_layout i{font-size: 26px; color: #fff;}
+.upfile_layout span{ height: 26px; line-height: 26px; font-size: 12px; color: #fff; font-weight: bold; margin-left: 2px;}
+.instructions{ width: 390px; line-height: 22px; margin: 50px auto 0 auto; text-align: center;}
+.selectfile_text{}
+.progress_box{width: 350px; height: 100px; margin:30px auto;}
+.progress_custom{width: 350px; height: 30px; float: left;}
+.upfilebtn{ position: absolute; left: 50%; top: 1px; margin-left: 40px; height: 40px; width: 70px; background: #24A0A8; color: #fff; font-size: 16px; font-weight: bold; border-radius: 6px;}
+/*作敏的横向menu-换肤*/
+.iwapui .cross *{font-size: 14px;}
+.iwapui .cross{background: #B8D9FF; padding: 0;}
+.iwapui .cross>li{float: left; position: relative;}
+.iwapui .ztree.cross>li>a:hover,.iwapui .ztree>li>a.curSelectedNode{background: #F7F9FF;}
+.iwapui .cross>li>a>span:last-child{padding: 0 10px;}
+.iwapui .cross>li ul{width: 128px; position: absolute; border: 1px #F7F9FF solid;}
+.iwapui .ztree.cross li a{ width: auto; margin: 0; display: block; height: 100%;}
+.iwapui .ztree.cross>li>a>span{font-size: 14px; font-weight: normal;}
+.iwapui .ztree.cross>li>ul li span{position: relative; width: inherit; text-overflow:ellipsis; overflow: hidden;}
+.iwapui .ztree.cross>li>ul>li ul{position: absolute; left: 100%; top: 0; border: 1px #F7F9FF solid;}
+.iwapui .ztree.cross li span.button.noline_close.level0,
+.iwapui .ztree.cross li span.button.noline_open.level0{width: 0; height: 0; float: right; visibility: visible; background: none; border: 4px solid; border-color:#999 transparent transparent transparent; margin-top: 10px;}
+.iwapui .ztree.cross>li>ul>li>a>span:nth-child(1),
+.iwapui .ztree.cross li span.button.ico_close,
+.iwapui .ztree.cross li span.button.ico_open{display: none;}
+/*作敏的纵向TREE-换肤-重定义修改原TREE的样式-邮箱样式*/
+.ztree.column * {font-size: 10pt;font-family:"Microsoft Yahei",Verdana,Simsun,"Segoe UI Web Light","Segoe UI Light","Segoe UI Web Regular","Segoe UI","Segoe UI Symbol","Helvetica Neue",Arial}
+.ztree.column{padding: 0;}
+.ztree.column li ul{ margin:0; padding:0 0 0 5px;}
+.ztree.column>li>ul{ padding-left:0;}
+.ztree.column li {line-height:30px;}
+.ztree.column li a {width:200px;height:30px;padding-top: 0px;}
+.ztree.column li a:hover {text-decoration:none; background-color: #E7E7E7;}
+.ztree.column li a span.button.switch {visibility:hidden}
+.ztree.column.showIcon li a span.button.switch {visibility:visible}
+.ztree.column li a.curSelectedNode {background-color:#D4D4D4;border:0;height:30px;}
+.ztree.column li span {line-height:30px;}
+.ztree.column li span.button {margin-top: -7px;}
+.ztree.column li span.button.switch {width: 16px;height: 16px;}
+.ztree.column li a.level0 span {font-size: 135%; font-weight: bold;}
+.ztree.column li span.button {background-image:url("../images/img/left_menuForOutLook.png"); *background-image:url("../images/img/left_menuForOutLook.gif")}
+.ztree.column li span.button.switch.level0 {width: 20px; height:20px}
+.ztree.column li span.button.switch.level1 {width: 20px; height:20px}
+.ztree.column li span.button.noline_open {background-position: 0 0;}
+.ztree.column li span.button.noline_close {background-position: -18px 0;}
+.ztree.column li span.button.noline_open.level0 {background-position: 0 -18px;}
+.ztree.column li span.button.noline_close.level0 {background-position: -18px -18px;}
+.ztree.column li span.button.noline_close{background-position: -18px 1px;}
+/*
+作敏的纵向TREE-换肤-重定义修改原TREE的样式-换成第二种界面样式 left-menu-原静态页面内容样式
+*/
+.tree_menubox2 .ztree{padding: 0;}
+.tree_menubox2 .ztree li ul{padding-left: 0;}
+.tree_menubox2 .ztree li a {width:200px;height:30px;padding-top: 0px; padding: 0 5px; cursor: pointer}
+.tree_menubox2 .ztree li a:nth-child(1){padding: 1px 3px 0 0;}
+.tree_menubox2 .ztree>li>ul>li>a{padding-left: 5px;}
+.tree_menubox2 .ztree li a span.button.switch {visibility:visible}
+.tree_menubox2 .ztree.cross>li>a:hover,.tree_menubox2 .ztree>li>a.curSelectedNode,
+.tree_menubox2 .ztree li a:hover {text-decoration:none; background-color: #2291AB; color: #fff;}
+
+.tree_menubox2 .ztree li span.button {background:url("../images/navbg.png") 8px 3px no-repeat; *background:url("../images/navbg.gif") 8px 3px no-repeat;}
+.tree_menubox2 .ztree li span.button.switch.level0 ,
+.tree_menubox2 .ztree li span.button.switch.level1 {width: 16px; height:16px}
+.tree_menubox2 .ztree li span.button.noline_open {background-position: 8px 3px;}
+.tree_menubox2 .ztree li span.button.noline_close {background-position: -18px 0;}
+.tree_menubox2 .ztree li span.button.noline_open.level0 {background-position: 8px 2px;}
+.tree_menubox2 .ztree li a.level0 span {font-size: 130%;font-weight: bold;}
+ /*left-menu-原静态页面内容样式*/
+.tree_menubody .ztree li a {width:200px;height:30px;padding-top: 0px;}
+.tree_menubody .ztree{/*margin-top: -10px;*/ font-size: 14px; letter-spacing: 1px; overflow-y: auto; overflow-x: hidden;}
+.tree_menubody .ztree a{text-decoration: none;}
+.tree_menubox2 .ztree{width: 193px; overflow: hidden;}
+.tree_menubox2 h2{height: 42px; line-height: 42px; margin-bottom: 0; background: #24A0A8; color: #fff; font-size: 16px;}
+
+.menu_h2_icon{margin: -4px 8px 0px 8px; font-size: 18px; cursor: pointer; vertical-align: middle;}
+.menu_h2_icon_new{display: inline-block; margin: -5px 6px 0px 4px; height: 22px; width: 22px; cursor: pointer; vertical-align: middle; background:url(../images/menu-bg.png) no-repeat; }
+.pointer{cursor:pointer;}
+/*原生tree加右键菜单样式*/
+div#rMenu {position: absolute; background-color: #FFF; visibility: hidden; top: 0; text-align: left; padding: 0 1px; z-index: 100; border-radius: 3px; border: 1px #D2D2D2 solid; box-shadow: 0px 2px 8px -2px #999;}
+div#rMenu ul li{ margin: 1px 0; padding: 0 5px; cursor: pointer; list-style: none outside none;}
+/*原生tree加小btn按钮*/
+.iwapui .ztree li a.btn1_0{color: #0ED503; margin: 0 4px;}
+.iwapui .ztree li a.btn1_1{color: rgba(201, 168, 1, 0.85); margin: 0 4px;}
+.iwapui .ztree li a.btn1_2{color: hsl(0, 0%, 73%); margin: 0 4px;}
+.iwapui .ztree a.b_blue{color: #0080F5;}
+.iwapui .ztree a.b_red{color: #F54600;}
+.iwapui .ztree a.b_gray{color: #BCBCBC;}
+/*为了对齐INPUT和LABLE-SPAN而额外加的样式*/
+.w500mauto{width:500px; margin: 50px auto 0 auto;}
+.iwapui .w500mauto>ul>li>div>span,
+.iwapui .w500mauto .inputbox>span,
+.iwapui .w500mauto .textarea>span,
+.iwapui .w500mauto .selectbox>label,
+.iwapui .w500mauto .selectbox>span,
+.content2 .inputbox>span,
+.content2 .selectbox>span,
+.content2 ul>li>span
+{width: 108px; text-align: right; display: inline-block;}
+.content2{margin: 50px 0 0;}
+.iwapui .w500mauto textarea{width: 300px;}

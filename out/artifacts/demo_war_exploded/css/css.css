@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/*
+ * @authors Your Name (you@example.org)
+ * @date    2015-05-11 23:19:59
+ * @version 1.0
+ */
+ *{margin: 0; padding: 0; border:0;}
+/*如有需要，把此行写在需要的页面中,用于BODY高度满屏显示，即高度百分百，多用于IFRAME嵌套使用
+body,html{height: 100%; overflow-y:auto;}*/
+body{font-size: 14px; font-family: Microsoft YaHei,SimSun;}
+img{border:0;}
+li{list-style: none;}
+i,em{font-style: normal;}
+.pr{position: relative;}
+.pa{position: absolute;}
+.fl{float: left;}
+.fr{float: right;}
+.fb{font-weight: bold;}
+.logo{}
+.tl{text-align: left;}
+.tc{text-align: center;}
+.margin0{margin: 0;}
+.mr30{margin-right: 30px;}
+.mr60{margin-right: 60px;}
+.mb14{margin-bottom: 14px;}
+a{color: #000; text-decoration: none;}
+a:hover{color:#FC0303;}
+.clearfix:after { content: "."; height: 0; display: block; clear: both; zoom:1; visibility: hidden;}
+* html .clearfix {height: 1%;}
+
+

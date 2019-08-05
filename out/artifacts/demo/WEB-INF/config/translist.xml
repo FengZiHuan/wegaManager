@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<TransList>
+  <!-- 前台 -->
+  <TransInterface name="sysParam" transFile="system/sysParam.xml"/>
+  <TransInterface name="login" transFile="system/login.xml"/>
+  <TransInterface name="modifyPwd" transFile="system/modifyPwd.xml"/>
+  <TransInterface name="online" transFile="system/online.xml"/>
+  <TransInterface name="getUserMenu" transFile="system/userMenu.xml"/>
+  <TransInterface name="userMg" transFile="system/userMg.xml"/>
+  <TransInterface name="logQry" transFile="system/logQry.xml"/>
+  <!-- prefrcMg 偏好设置 -->
+  <TransInterface name="prefrcMg" transFile="system/prefrcMg.xml"/>
+  <!-- role -->
+  <TransInterface name="roleMg" transFile="system/role/query.xml"/>
+  <!-- department -->
+  <TransInterface name="department" transFile="system/department/query.xml"/>
+  <TransInterface name="addDepartment" transFile="system/department/add.xml"/>
+  <TransInterface name="showDepartment" transFile="system/department/show.xml"/>
+  <TransInterface name="departmentList" transFile="system/department/list.xml"/>
+  <!-- menu -->
+  <TransInterface name="menuMg" transFile="system/menu/query.xml"/>
+  <!-- pub -->
+  <TransInterface name="deptList" transFile="pub/deptlist.xml"/>
+  <TransInterface name="menuList" transFile="pub/menulist.xml"/>
+  <TransInterface name="usertList" transFile="pub/userlist.xml"/>
+  <TransInterface name="importData" transFile="pub/importData.xml"/>
+  <TransInterface name="exportData" transFile="pub/exportData.xml"/>
+  <!-- common -->
+  <TransInterface name="dictionary" transFile="common/dictionary.xml"/>
+  <TransInterface name="dict" transFile="common/dict.xml"/>
+  <TransInterface name="orderform" transFile="orderform.tflow"/>
+  <!-- <TransInterface name="test" transFile="test/test.xml"/> -->
+   <!-- 员工测试-->
+  <TransInterface name="staffList" transFile="pub/stafflist.xml"/>
+  <!-- 城市距离与补贴标准-->
+  <TransInterface name="cityList" transFile="system/wageChanges/citylist.xml"/>      
+  <!-- punish 处分情况-->
+  <TransInterface name="punish" transFile="system/wageChanges/punish.xml"/>
+   <!-- exchangesubsidy 交流补贴-->
+  <TransInterface name="exchangesubsidy" transFile="system/wageChanges/exchangesubsidy.xml"/>
+  <!-- fiveRisksOneGold 五险一金情况-->
+  <TransInterface name="fiveRisksOneGold" transFile="system/wageChanges/fiveRisksOneGold.xml"/>
+  <!-- mergeSummary 编辑和合并数据-->
+  <TransInterface name="mergeSummary" transFile="system/wageChanges/mergeSummary.xml"/>
+   <!-- mergeSummaryCheck 合并数据审核-->
+  <TransInterface name="mergeSummaryCheck" transFile="system/wageChanges/mergeSummaryCheck.xml"/>
+  <!--请假-->
+  <TransInterface name="holidayMg" transFile="system/wageChanges/holidayMg.xml"/>
+  <TransInterface name="tingMg" transFile="system/wageChanges/tingMg.xml"/>
+  <TransInterface name="tingfaMg" transFile="system/wageChanges/tingfaMg.xml"/>
+  <TransInterface name="jihuaMg" transFile="system/wageChanges/planMg.xml"/>
+  <!--绩效绩效分配及奖金分配-->
+  <TransInterface name="performanceManagementMg" transFile="system/wageChanges/performanceManagementMg.xml"/>
+  <!--二级分行人员绩效以及奖金分配-->
+  <TransInterface name="searchGeneralBank" transFile="system/wageChanges/searchGeneralBankMg.xml"/>
+  <TransInterface name="submissionAssessmentMg" transFile="system/wageChanges/submissionAssessmentMg.xml"/>
+  <!--二级分行人员绩效以及奖金分配(核对提交数据)-->
+  <TransInterface name="checkPerformanceMg" transFile="system/wageChanges/checkPerformanceMg.xml"/>
+  <!--省行汇总数据分发绩效-->
+  <TransInterface name="sendPerformanceMg" transFile="system/wageChanges/sendPerformanceMg.xml"/>
+  <!--省行查看历史记录-->
+  <TransInterface name="seePerformanceHistoryMg" transFile="system/wageChanges/seePerformanceHistoryMg.xml"/>
+  <!--加班值班管理-->
+  <TransInterface name="overtimeMg" transFile="system/wageChanges/overtimeMg.xml"/>
+  <TransInterface name="overtimeSummaryMg" transFile="system/wageChanges/overtimeSummaryMg.xml"/>
+  <!--省行本部绩效奖金-->
+  <TransInterface name="managerCheckPerformanceMg" transFile="system/wageChanges/managerCheckPerformance/managerCheckPerformanceMg.xml"/>
+  <TransInterface name="managerCheckDataMg" transFile="system/wageChanges/managerCheckPerformance/managerCheckDataMg.xml"/>
+    <!--cmis部门维护-->
+  <TransInterface name="deptUpdateMg" transFile="system/cmis/deptUpdateMg.xml"/>
+    <!--人员变动表导出-->
+  <TransInterface name="exportPeopelChangesMg" transFile="system/cmis/exportPeopelChangesMg.xml"/>
+    <!--基本工资变动-->
+  <TransInterface name="basePageChangeMg" transFile="system/cmis/basePageChangeMg.xml"/>
+    <!--岗位工资变动-->
+  <TransInterface name="postSalaryChangeMg" transFile="system/cmis/postSalaryChangeMg.xml"/>
+    <!--保险变动-->
+  <TransInterface name="insuranseChangeMg" transFile="system/cmis/insuranseChangeMg.xml"/>
+    <!--领导审核-->
+  <TransInterface name="readerCheckMg" transFile="system/wageChanges/readerCheck/readerCheckMg.xml"/>
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+</TransList>

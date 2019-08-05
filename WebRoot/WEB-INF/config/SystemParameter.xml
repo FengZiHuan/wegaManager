@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parameters>
+	<parameter name="pageSize" description="系统默认查询分页大小">20</parameter>
+	<parameter name="uploadPath" description="文件上传路径">／upload</parameter>
+	<parameter name="encrypt" description="密码是否加密">true</parameter>
+</parameters>

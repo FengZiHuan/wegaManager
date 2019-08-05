@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<description>iwap接入配置</description>
+	<display-name>iwap-webprocessor</display-name>
+	<!-- 交易码参数 -->
+	<context-param>
+		<param-name>txCode</param-name>
+		<param-value>txcode</param-value>
+	</context-param>
+	<!-- 启用会话上下文 -->
+	<context-param>
+		<param-name>sessionContext</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<listener>
+		<listener-class>com.nantian.iwap.app.listener.IWAPSessionListener</listener-class>
+	</listener>
+	<filter>
+		<description>总流量控制</description>
+		<display-name>flowCtrl</display-name>
+		<icon></icon>
+		<filter-name>flowCtrl</filter-name>
+		<filter-class>com.nantian.iwap.web.FlowControl</filter-class>
+		<!-- 是否开启流量控制，默认false -->
+		<init-param>
+			<param-name>flowCtrl</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<!-- 流量控制url-->
+		<init-param>
+			<param-name>url</param-name>
+			<param-value>iwap.ctrl</param-value>
+		</init-param>
+		<!-- 总流量 -->
+		<init-param>
+			<param-name>count</param-name>
+			<param-value>3</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>flowCtrl</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>MainServlet</servlet-name>
+		<servlet-class>com.nantian.iwap.web.MainServlet</servlet-class>
+		<init-param>
+			<param-name>LOGCONFIG</param-name>
+			<param-value>/WEB-INF/config/log4j.properties</param-value>
+		</init-param>
+		<load-on-startup>6</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MainServlet</servlet-name>
+		<url-pattern>*.ctrl</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+    <mime-mapping>
+        <extension>xls</extension>
+        <mime-type>application/vnd.ms-excel</mime-type>
+    </mime-mapping>
+	<mime-mapping>
+        <extension>xlsx</extension>
+        <mime-type>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</mime-type>
+    </mime-mapping>
+	<!-- 配置jsp页面全局信息 -->
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<el-ignored>false</el-ignored>
+			<scripting-invalid>false</scripting-invalid>
+			<include-prelude>/WEB-INF/tablib.jsp</include-prelude>
+		</jsp-property-group>
+	</jsp-config>
+</web-app>

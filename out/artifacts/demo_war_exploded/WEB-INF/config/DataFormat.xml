@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataFormat>
+	<DataMap txcode="userMg">
+		<Item key="acct_status" pattern="" type="String" ref="ACCT_STATUS" />
+		<Item key="last_login_tm" pattern="yyyy-MM-dd HH:mm:ss|yyyy-MM-dd HH:mm:ss" type="String" ref="" />
+	</DataMap>
+	<DataMap txcode="public">
+	</DataMap>
+</DataFormat>

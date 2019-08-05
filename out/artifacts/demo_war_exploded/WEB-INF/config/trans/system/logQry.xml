@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Transaction name="logQry" caption="" version="1.0" description="">
+	<actionflow id="">
+		<actions>
+			<action id="start" type="begin"></action>
+			<action id="viewPage" type="view">
+				<param name="page">screen/system/logQuery.jsp</param>
+				<param name="paramType">result</param>
+			</action>
+			<action id="logQuery" type="batis">
+				<param name="sqlStr">queryLogWithPage</param>
+			</action>
+			<action id="queryData" type="json">
+			</action>
+			<action id="end" type="end"/>
+		</actions>
+		<connections>
+			<connection id="connection0" from="start" to="viewPage"/>
+			<connection id="connection1" from="viewPage" to="logQuery"/>
+			<connection id="connection2" from="logQuery" to="queryData"/>
+			<connection id="connection3" from="queryData" to="end"/>
+		</connections>
+		
+	</actionflow>
+</Transaction>

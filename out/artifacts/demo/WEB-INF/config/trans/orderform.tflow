@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Transaction >
+	<actionflow id='orderform'>
+		<actions>
+		  <action id="start" type="begin"></action>
+		  <action  id='1'  name='页面组件'  type='view' >
+			<param name='pramtype'></param>
+			<param name='page'></param>
+			<param name='paraname'></param>
+		  </action>
+		  <action  id='2'  name='Batis单SQL组件'  type='batis' >
+			<param name='sqlstr'></param>
+		  </action>
+		  <action  id='3'  name='JSON数据组件'  type='json' >
+			<param name='pramtype'></param>
+			<param name='paraname'></param>
+		  </action>
+		  <action id="end" type="end"></action>
+		</actions>
+		<connections>
+		  <connection id="Connection1" from="start" to="1" >
+		  </connection>
+		  <connection id="Connection2" from="1" to="2" >
+		  </connection>
+		  <connection id="Connection3" from="2" to="3" >
+		  </connection>
+		  <connection id="Connection4" from="3" to="end" >
+		  </connection>
+		</connections>
+	</actionflow>
+</Transaction>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionDef>
+	<action type="begin" class="com.nantian.iwap.biz.actions.BeginAction"/>
+	<action type="end" class="com.nantian.iwap.biz.actions.EndAction"/>
+	<action type="jdbc" class="com.nantian.iwap.biz.actions.JdbcAction"/>
+	<action type="json" class="com.nantian.iwap.biz.actions.JsonAction"/>
+	<action type="view" class="com.nantian.iwap.biz.actions.ViewAction"/>
+	<action type="subFlow" class="com.nantian.iwap.biz.actions.SubFlowAction"/>
+	<action type="service" class="com.nantian.iwap.biz.actions.ServiceAction"/>
+	<action type="batis" class="com.nantian.iwap.biz.actions.BatisAction"/>
+	<action type="batisDao" class="com.nantian.iwap.biz.actions.BatisDaoAction"/>
+</actionDef>

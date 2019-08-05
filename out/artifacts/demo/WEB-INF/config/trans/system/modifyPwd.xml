@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Transaction name="modifyPwd" caption="" version="1.0" description="">
+	<actionflow id="">
+		<actions>
+			<action id="start" type="begin"></action>
+			<action id="viewPage" type="view">
+				<param name="page">screen/system/modifyPwd.jsp</param>
+				<param name="paramType">result</param>
+			</action>
+			<action id="modify" class="com.nantian.iwap.app.action.ModifyPasswordAction">
+			</action>
+			<!-- 登陆跳转修改密码后跳转回欢迎页面 -->
+			<action id="modifyByLogin" type="view">
+				<param name="page">screen/mainFrame.jsp</param>
+				<param name="paramType">request</param>
+			</action>
+			<!-- 点击修改按钮进入修改 -->
+			<action id="nomalModify" type="view">
+				<param name="page">screen/system/modifyPwd.jsp</param>
+				<param name="paramType">request</param>
+			</action>
+			<action id="end" type="end"/>
+		</actions>
+		<connections>
+			<connection id="connection0" from="start" to="viewPage"/>
+			<connection id="connection1" from="viewPage" to="modify"/>
+			<!-- 登陆后跳转-->
+			<connection id="connection2" from="modify" to="modifyByLogin">
+<!-- 				<condition><![CDATA['${srcCode}'=='login-err-006'&&'${errorCode}'=='']]></condition> -->
+			</connection>
+			<!-- 正常跳转 -->
+			<!-- <connection id="connection3"  from="modify" to="nomalModify">
+			</connection> -->
+			<connection id="connection5" from="nomalModify" to="end"/>
+			<connection id="connection6" from="modifyByLogin" to="end"/>
+		</connections>
+		
+	</actionflow>
+</Transaction>

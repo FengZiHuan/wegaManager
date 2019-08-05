@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Transaction name="userList" caption="" version="1.0" description="">
+	<actionflow id="">
+			<action id="start" type="begin" />
+			<action id="viewPage" type="view">
+				<param name="page">screen/pub/userlist.jsp</param>
+				<param name="paramType">result</param>
+			</action>
+			<action id="doBiz" type="service">
+				<param name="clazz">
+					  com.nantian.iwap.action.pub.UserListAction
+				</param>
+			</action>
+			<action id="json" type="json">
+				<param name="paramType">result</param>
+			</action>
+			<action id="end" type="end" />
+		</actionflow>
+</Transaction>

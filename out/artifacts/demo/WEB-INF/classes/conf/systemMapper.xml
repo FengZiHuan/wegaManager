@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.nantian.iwap.system.app">
+     <select id="querySysParamWithPage" resultType="java.util.Map">
+         select * from sys_param 
+         <where>  
+	        <if test="paramZhNm !=null ">
+	            param_zh_nm like '%${paramZhNm}%'
+	        </if>  
+	         <if test="enableFlag !=null and enableFlag!=''">  
+	            and enable_flag=#{enableFlag}
+	        </if>  
+        </where>
+     </select>
+     <delete id="delSysParam">
+     	delete from sys_param where param_en_nm=#{param_en_nm}
+     </delete>
+     <!-- <update id="updateSysParam">
+     	update sys_param set param_zh_nm=#{param_zh_nm},
+     	param_val=#{param_val},enable_flag=#{enable_flag},
+     	mdf_date=now(),mdf_usr='admin' where param_en_nm=#{param_en_nm}
+     </update> -->
+     <update id="updateSysParam">
+     	update sys_param set param_zh_nm=#{param_zh_nm},
+     	param_val=#{param_val},enable_flag=#{enable_flag},
+     	mdf_date=sysdate,mdf_usr='admin' where param_en_nm=#{param_en_nm}
+     </update>
+     <insert id="insertSysParam">
+     	insert into sys_param(param_en_nm,param_zh_nm,param_val,enable_flag,crt_date,crt_usr,mdf_date,mdf_usr)
+     	values(#{param_en_nm},#{param_zh_nm},#{param_val},#{enable_flag},sysdate,'admin',sysdate,'admin')
+     </insert>
+     <select id="loginSql" resultType="java.util.Map">
+     	select t.ACCT_ID,
+		t.ACCT_STATUS,
+		t.ACCT_INV_DT,
+		t.ACCT_EMAIL,t.acct_phone,
+		t.ACCT_NM,t.ACCT_VER_NM,
+		t.ACCT_PWD,LAST_MDF_PWD_DT,
+		t.ORG_ID
+		from SYS_ACCOUNT t
+		where t.acct_id=#{userId}
+     </select>
+     <!-- 更新用户密码错误次数 -->
+     <update id="updateUserErrCnt">
+     	update SYS_ACCOUNT set pwd_err_count=(case  when pwd_err_count is null then 0 else pwd_err_count end )+1,
+     				acct_status=case when pwd_err_count&gt;=#{errCnt} then '2' else '1' END
+     	 where acct_id=#{userId}
+     </update>
+     <!-- 用户登陆成功后清除密码错误次数 -->
+     <update id="clearUserErrCnt">
+     	update SYS_ACCOUNT set pwd_err_count=0,last_login_tm=sysdate
+     	 where acct_id=#{userId}
+     </update>
+     
+     <!-- 修改密码 -->
+     <update id="updatePwd">
+     	update SYS_ACCOUNT set ACCT_PWD=#{targetPwd},acct_mdf=#{userId},acct_mdf_tm=#{currDate},last_mdf_pwd_dt=#{currDate}
+     	 where acct_id=#{userId}
+     </update>
+     <!-- 查询用户角色 -->
+     <select id="queryUserRole"  resultType="java.util.Map">
+     	SELECT t2.role_id FROM sys_acct_role t2 WHERE t2.acct_id =#{userId}
+     </select>
+     <!--查询用户权限-->
+     <select id="queryUserAuth" resultType="java.util.Map">
+     	SELECT
+			t.role_id,
+			t.role_nm,
+			t1.module_id
+		FROM
+			sys_role t,
+			sys_role_module t1,
+			sys_acct_role t2
+		WHERE
+			t.role_id = t1.role_id
+		AND t1.role_id = t2.role_id
+		AND t2.acct_id =#{ACCT_ID} 
+     </select>
+     
+      <!--查询所有菜单-->
+     <select id="queryAllMenu" resultType="java.util.Map">
+     	SELECT * from sys_module order by module_order 
+     </select>
+     
+      <!--查询角色菜单-->
+     <select id="queryRoleMenu" resultType="java.util.Map">
+     	select * from sys_role_module where role_id=#{role_id}
+     </select>
+     
+      <!--日志查询-->
+     <select id="queryLogWithPage" resultType="java.util.Map">
+     	select * from sys_tx_dtl
+     	where 1=1  
+        <if test="tx_cd !=null ">
+            and tx_cd = #{tx_cd}
+        </if>  
+         <if test="req_date !=null and req_date!=''">  
+            and req_tm=#{req_date}
+        </if> 
+        <if test="usr_id !=null and usr_id!=''">  
+            and acct_id=#{usr_id}
+        </if>  
+        <if test="err_code !=null and err_code!=''">  
+            and err_code=#{err_code}
+        </if> 
+        
+       	 order by req_tm desc
+     </select>
+	<select id="queryUserDataAuth">
+	select setting_key,setting_val from SYS_ACCT_PREFRC
+		where acct_id=#{userId} and prefrc_category='data_auth'
+	</select>
+	
+	<insert id="insertUser">
+		insert into sys_account(acct_id,acct_pwd,acct_status,acct_nm,org_id,acct_phone,acct_addr,acct_zipcode,acct_email,acct_ver_nm,acct_crt_tm,acct_crt) 
+		values(#{acct_id},#{acct_pwd},#{acct_status},#{acct_nm},#{org_id},#{acct_phone},#{acct_addr},#{acct_zipcode},#{acct_email},#{acct_ver_nm},sysdate,#{acct_crt})
+     </insert>
+ </mapper>

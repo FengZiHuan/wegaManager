@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DBSourceList>
+
+	
+<DBSource
+	    id="webcms" 
+	    dbPassword="123456"
+	    dbUser="db002data"
+	    driverClassName="oracle.jdbc.OracleDriver"  
+	    isJndi="no" 
+	    desc="" 
+	    jdbcUrl="jdbc:oracle:thin:@127.0.0.1:1521:ORCL"
+	    dbClass="com.nantian.iwap.persistence.DBAccessOracle" 
+	    isDefault="yes"
+	    />
+</DBSourceList>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Transaction name="online" caption="" version="1.0" description="">
+	<actionflow id="">
+		<action id="viewPage" type="view">
+			<param name="page">screen/system/online.jsp</param>
+		</action>
+		<action id="doBiz" type="service">
+			<param name="clazz">
+				com.nantian.iwap.app.action.OnlineUserAction
+			</param>
+		</action>
+		<action id="3" type="json">
+			<param name="paramType">result</param>
+		</action>
+	</actionflow>
+</Transaction>

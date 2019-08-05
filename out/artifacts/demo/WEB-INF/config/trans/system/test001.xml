@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Transaction name="queryUser" caption="" version="1.0" description="">
+	<actionflow id="" startAction="0">
+		<action id="1" type="service">
+			<param name="clazz">
+				Comm1Action
+			</param>
+		</action>
+		<action id="0" type="json">
+			<param name="paramType">
+				result
+			</param>
+		</action>
+	</actionflow>
+</Transaction>

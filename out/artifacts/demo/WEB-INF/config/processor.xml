@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Processors>
+	<UrlMapping key="iwap.ctrl">
+		<Processor id="4" name="iwap" description="IWAP交易接入处理" class="com.nantian.iwap.core.IwapJsonProcessor">
+		   <interceptors>
+		    	<interceptor class="com.nantian.iwap.core.LogInterceptor"/>
+		    	<interceptor class="com.nantian.iwap.app.util.TransInterceptor"/>
+		    </interceptors> 
+		    <requesthandler class="com.nantian.iwap.core.IwapJsonRequestHandler"/>
+			<presentationhandler class="com.nantian.iwap.core.IwapJsonPresentationHandler"/>
+		</Processor>
+	</UrlMapping>
+	<UrlMapping key="download.ctrl">
+		<Processor id="5" name="iwap_download" description="IWAP导出下载" class="com.nantian.iwap.core.IwapJsonProcessor">
+		   <interceptors>
+		    	<interceptor class="com.nantian.iwap.core.LogInterceptor"/>
+		    	<interceptor class="com.nantian.iwap.app.util.TransInterceptor"/>
+		    </interceptors> 
+		    <requesthandler class="com.nantian.iwap.core.IwapJsonRequestHandler"/>
+			<presentationhandler class="com.nantian.iwap.app.web.IwapDownloadPresentationHandler"/>
+		</Processor>
+	</UrlMapping>
+</Processors>

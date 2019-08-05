@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.nantian.iwap.system.app">
+      <!--查询角色-->
+      <!-- <select id="queryRoleWithPage" resultType="java.util.Map">
+     	select ROLE_ID,ROLE_NM,ORG_ID,NVL(ROLE_DESC,'') as ROLE_DESC  from sys_role where ROLE_ENABLED = '1' 
+	    <if test="roleid !=null and roleid!=''">
+            and ROLE_ID like '%${roleid}%'
+        </if>  
+         <if test="roleName !=null and roleName!=''">  
+            and ROLE_NM like '%${roleName}%'
+        </if>
+        <if test="org_id !=null and org_id!=''">  
+            and org_id like '%${org_id}%'
+        </if>  
+     </select> -->
+      <select id="queryRoleWithPage" resultType="java.util.Map">
+     	select ROLE_ID,ROLE_NM,ORG_ID,ORG_NM,ROLE_DESC, decode(ROLE_ENABLED,1,'启用',0,'关闭') as ROLE_ENABLED from sys_role 
+   	 where 1=1 
+	    <if test="roleid !=null and roleid!=''">
+            and ROLE_ID like '%${roleid}%'
+        </if>  
+         <if test="roleName !=null and roleName!=''">  
+            and ROLE_NM like '%${roleName}%'
+        </if>
+        <if test="org_id !=null and org_id!=''">  
+            and org_id like '%${org_id}%'
+        </if>  
+     </select>
+     
+     <delete id="delRole">
+        <if test="list.size>0">
+     	
+     	<![CDATA[delete from sys_role where role_id in (
+     	]]>
+     	<foreach collection="list" item ="item" index ="index" separator=",">
+     	 #{item}
+     	</foreach>
+     	<![CDATA[)
+     	]]>
+     	</if>
+     </delete>
+     <update id="updateRole">
+     	update sys_role 
+     	set role_nm=#{ROLE_NM},
+     	role_desc=#{ROLE_DESC},
+     	role_enabled=#{ROLE_ENABLED},
+     	org_id=#{ORG_ID},
+     	org_nm=#{ORG_NM} 
+     	where role_id=#{ROLE_ID}
+     </update>
+      <select id="existRole"  resultType="java.util.Map">
+        select count(2) as cnt from sys_role where role_id =#{ROLE_ID} 
+     </select>
+     <insert id="insertRole">
+         insert into sys_role(role_id,role_nm,role_desc,role_enabled,org_id,org_nm) values
+         (#{ROLE_ID},#{ROLE_NM},#{ROLE_DESC},#{ROLE_ENABLED},#{ORG_ID},#{ORG_NM})
+     </insert>
+ 
+ </mapper>

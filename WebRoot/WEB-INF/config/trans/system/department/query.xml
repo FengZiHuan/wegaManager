@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Transaction name="department" caption="" version="1.0" description="">
+	<actionflow id="">
+		<actions>
+			<action id="start" type="begin"/>
+			<action id="viewPage" type="view">
+				<param name="page">screen/system/department/query.jsp</param>
+			</action>
+			<action id="doBiz" class="com.nantian.iwap.app.action.system.DepartmentAction">
+			</action>
+			<action id="json" type="json">
+				<param name="paramType">result</param>
+		    </action>
+			<action id="end" type="end"/>
+		</actions>
+		<connections>
+			<connection id="connection0" from="start" to="viewPage"/>
+			<connection id="connection1" from="viewPage" to="doBiz"/>
+			<connection id="connection2" from="doBiz" to="json"/>
+			<connection id="connection3" from="json" to="end"/>
+		</connections>
+	</actionflow>
+</Transaction>	
+	
+	
+		

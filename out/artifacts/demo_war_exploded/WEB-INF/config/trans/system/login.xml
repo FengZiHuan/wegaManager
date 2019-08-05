@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Transaction name="login" caption="" version="1.0" description="">
+	<actionflow id="">
+		<actions>
+			<action id="start" type="begin"/>
+			<action id="viewPage" type="view">
+				<param name="page">login.jsp</param>
+			</action>
+			<action id="login" class="com.nantian.iwap.app.action.LoginAction">
+				<param name="checkPwd">true</param>
+				<param name="pwdErrCnt">3</param>
+				<param name="pwdExpireDays">90</param>
+			</action>
+			<action id="logSucess" type="view">
+				<param name="page">screen/mainFrame.jsp</param>
+				<param name="paramType">session</param>
+				<param name="paraName">userInfo</param>
+			</action>
+			<action id="logWarn" type="view">
+				<param name="page">screen/system/modifyPwd.jsp</param>
+<!-- 				<param name="paramType">session</param>
+				<param name="paraName">userInfo</param> -->
+			</action>
+			<action id="end" type="end"/>
+		</actions>
+		<connections>
+			<connection id="connection0" from="start" to="viewPage"/>
+			<connection id="connection1" from="viewPage" to="login"/>
+			<!-- 登陆成功 -->
+			<connection id="connection2" from="login" to="logSucess">
+				<condition><![CDATA['${errorCode}'==''&&'${resultFlag}'=='1']]></condition>
+			</connection>
+			<!-- 登陆密码过期 -->
+			<connection id="connection3"  from="login" to="logWarn">
+				<condition><![CDATA['${errorCode}'=='login-err-006']]></condition>
+			</connection>
+			<!-- 登陆失败-->
+			<connection id="connection4"  from="login" to="viewPage">
+				<condition><![CDATA['${errorCode}'!=''&&'${resultFlag}'!='1']]></condition>
+			</connection>
+			<connection id="connection5" from="logSucess" to="end"/>
+			<connection id="connection6" from="logWarn" to="end"/>
+		</connections>
+	</actionflow>
+</Transaction>

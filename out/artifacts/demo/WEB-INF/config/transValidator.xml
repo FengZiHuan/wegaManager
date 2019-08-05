@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<validators>
+	<validator id="1" index="0" name="NOTNULL" class="com.nantian.iwap.core.IwapTransValidation" description="" errorcode="交易码不能为空"/>
+	<validator id="2" index="1" name="NOTNULL" class="com.nantian.iwap.app.util.AuthFilter" description="" errorcode="功能权限检查"/>
+</validators>

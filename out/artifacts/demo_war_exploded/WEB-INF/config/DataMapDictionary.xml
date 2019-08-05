@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataMapDictionary> 
+
+	<!-- iwap-app begin -->
+	<DataMap name="ACCT_STATUS" description="用户状态">
+		<Item key="1" value="有效"/>
+		<Item key="0" value="无效"/>
+		<Item key="2" value="锁定"/>
+	</DataMap>
+	<DataMap name="ROLE_ENABLED" description="角色是否启用">
+		<Item key="1" value="是"/>
+		<Item key="0" value="否"/>
+	</DataMap>
+	<DataMap name="MODULE_TYPE" description="模块类型">
+		<Item key="0" value="分类"/>
+		<Item key="1" value="模块"/>
+		<Item key="2" value="操作功能"/>
+	</DataMap>
+	<DataMap name="IS_VALID" description="是否有效">
+		<Item key="0" value="有效"/>
+		<Item key="1" value="失效"/>
+	</DataMap>
+	<DataMap name="IS_HIDE" description="模块是否隐藏">
+		<Item key="0" value="显示"/>
+		<Item key="1" value="隐藏"/>
+	</DataMap>
+	<DataMap name="Dept_State" description="机构状态">
+		<Item key="1" value="正常"/>
+		<Item key="0" value="撤销"/>
+	</DataMap>
+	<DataMap name="Dept_Level" description="机构级别">
+		<Item key="1" value="省行"/>
+		<Item key="2" value="分行"/>
+		<Item key="3" value="支行"/>
+		<Item key="4" value="网点"/>
+	</DataMap>
+	<DataMap name="PREFRC_CATEGORY" description="偏好设置类别">
+		<Item key="1" value="高级"/>
+		<Item key="2" value="中级"/>
+		<Item key="3" value="初级"/>
+
+	</DataMap>
+	<!-- iwap-app end -->
+
+	<DataMap name="Oper_Type" description="操作员类型">
+		<Item key="A" value="管理员"/>
+		<Item key="B" value="主管"/>
+	</DataMap>
+	<DataMap name="SEX" description="性别">
+		<Item key="1" value="男"/>
+		<Item key="2" value="女"/>
+	</DataMap>
+	<!-- <DataMap name="Department" description="机构" sql="select * from department">
+		<Item key="id" value="name" />
+	</DataMap>
+	<DataMap name="Role" description="角色" sql="select * from roledef">
+		<Item key="id" value="name" />
+	</DataMap> -->
+
+	
+	<DataMap name="Fund_Type" description="基金类型">
+		<Item key="0" value="股票型"/>
+		<Item key="1" value="债券型"/>
+		<Item key="2" value="偏股型"/>
+		<Item key="3" value="偏债型"/>
+		<Item key="4" value="混合型"/>
+	</DataMap>
+	<DataMap name="Deposit_Type" description="存款类型">
+		<Item key="00" value="活期"/>
+		<Item key="10" value="整存整取"/>
+		<Item key="11" value="零存整取、整存零取、存本取息"/>
+		<Item key="20" value="通知存款"/>
+		<Item key="30" value="协定存款"/>
+		<Item key="40" value="定活两便"/>
+	</DataMap>
+	<DataMap name="Deposit_Term" description="存款期限">
+		<Item key="000" value=""/>
+		<Item key="D01" value="一天"/>
+		<Item key="D07" value="七天"/>
+		<Item key="M01" value="一个月"/>
+		<Item key="M03" value="三个月"/>
+		<Item key="M06" value="半年"/>
+		<Item key="M12" value="一年"/>
+		<Item key="Y01" value="一年"/>
+		<Item key="Y02" value="二年"/>
+		<Item key="Y03" value="三年"/>
+		<Item key="Y05" value="五年"/>
+		<Item key="Y10" value="十年"/>
+	</DataMap>
+	<DataMap name="Currency" description="币种">
+		<Item key="0" value="人民币"/>
+		<Item key="1" value="美元"/>
+		<Item key="2" value="欧元"/>
+		<Item key="3" value="港币"/>
+		<Item key="4" value="日元"/>
+	</DataMap>
+	<DataMap name="Prod_Type" description="产品类型">
+		<Item key="0" value="非保本浮动收益"/>
+		<Item key="1" value="保证收益"/>
+	</DataMap>
+	<DataMap name="Fund_Stat" description="基金状态">
+		<Item key="0" value="暂停"/>
+		<Item key="1" value="开放"/>
+	</DataMap>
+	<DataMap name="Gold_Unit" description="黄金单位">
+		<Item key="0" value="元/盎司"/>
+		<Item key="1" value="元/克"/>
+	</DataMap>
+	<DataMap name="Font_Size" description="字体大小">
+		<Item key="20px" value="小"/>
+		<Item key="30px" value="中"/>
+		<Item key="40px" value="大"/>
+	</DataMap>
+	<DataMap name="Font_Color" description="字体颜色">
+		<Item key="#000000" value="颜色1"/>
+		<Item key="#FFFFFF" value="颜色2"/>
+		<Item key="#AAAAAA" value="颜色3"/>
+	</DataMap>
+	<DataMap name="Marquee" description="是否滚动">
+		<Item key="0" value="否"/>
+		<Item key="1" value="是"/>
+	</DataMap>
+	<DataMap name="IS_PASS" description="审核状态">
+		<Item key="0" value="未审核"/>
+		<Item key="1" value="通过"/>
+		<Item key="9" value="注销"/>
+	</DataMap>
+	<DataMap name="PLAY_STATUS" description="播放状态">
+		<Item key="0" value="未装载"/>
+		<Item key="1" value="已装载"/>
+		<Item key="2" value="已确认"/>
+		<Item key="3" value="正在下发"/>
+		<Item key="4" value="下发成功"/>
+		<Item key="5" value="下发失败"/>
+		<Item key="6" value="正在播放"/>
+		<Item key="7" value="播放结束"/>
+	</DataMap>
+	<DataMap name="ACTION_DESC" description="交易动作">
+		<Item key="view"  value="明细"/>
+		<Item key="new"   value="新增"/>
+		<Item key="add"   value="提交新增"/>
+		<Item key="rem"   value="删除"/>
+		<Item key="del"   value="提交删除"/>
+		<Item key="edit"  value="修改"/>
+		<Item key="modi"  value="提交修改"/>
+		<Item key="list"  value="查询列表"/>
+	</DataMap>
+	<DataMap name="Is_Exception" description="是否异常">
+		<Item key="0" value="正常"/>
+		<Item key="1" value="异常"/>
+	</DataMap>
+	<DataMap name="Is_Online" description="是否在线">
+		<Item key="0" value="离线"/>
+		<Item key="1" value="在线"/>
+	</DataMap>
+	<DataMap name="Is_Use" description="是否启用">
+		<Item key="0" value="启用"/>
+		<Item key="1" value="停用"/>
+	</DataMap>
+	<DataMap name="Run_Stat" description="终端运行状态">
+		<Item key="0" value="离线状态"/>
+		<Item key="1" value="正在播放视频"/>
+		<Item key="2" value="正在播放视频+滚动字幕"/>
+		<Item key="3" value="正在播放视频+下载文件"/>
+		<Item key="4" value="正在播放视频+滚动字幕+下载"/>
+		<Item key="5" value="正在下载或上传文件"/>
+		<Item key="6" value="正在删除文件"/>
+		<Item key="7" value="正在播放图片"/>
+		<Item key="8" value="正在播放图片+滚动字幕"/>
+		<Item key="9" value="正在播放图片+下载文件"/>
+		<Item key="10" value="正在播放图片+滚动字幕+下载"/>
+		<Item key="15" value="正在休眠"/>
+		<Item key="32" value="正在播放音频文件"/>
+		<Item key="33" value="正在播放字幕"/>
+		<Item key="34" value="正在播放图片+音频文件"/>
+		<Item key="48" value="正在格式化硬盘"/>
+		<Item key="49" value="正在播放音频+图片+字幕+下载"/>
+		<Item key="50" value="正在播放图片+音频+下载文件"/>
+		<Item key="51" value="正在播放音频+滚动字幕"/>
+		<Item key="52" value="正在播放音频+下载文件"/>
+		<Item key="53" value="正在播放音频+滚动字幕+下载"/>
+		<Item key="54" value="滚动字幕+下载文件"/>
+		<Item key="55" value="正在播放图片+音频+滚动字幕"/>
+		<Item key="57" value="正在升级,请勿断电"/>
+		<Item key="64" value="正在播放图片+视频文件"/>
+		<Item key="65" value="正在播放图片+视频文件＋字幕"/>
+		<Item key="66" value="正在播放图片+视频文件＋下载文件"/>
+		<Item key="67" value="正在播放图片+视频文件＋字幕＋下载文件"/>
+		<Item key="68" value="正在播放紧急插播文件或字幕"/>
+		<Item key="96" value="正在重启"/>
+		<Item key="97" value="正在初始化"/>
+		<Item key="98" value="正在播放网页"/>
+		<Item key="99" value="正在播放Demo文件"/>
+		<Item key="100" value="定时休眠"/>
+	</DataMap>
+	<DataMap name="Use_Type" description="终端用途">
+		<Item key="0" value="大厅"/>
+		<Item key="1" value="VIP"/>
+		<Item key="2" value="排队"/>
+		<Item key="3" value="其它"/>
+	</DataMap>
+	<DataMap name="TERM_PLAN_STATUS" description="终端计划状态">
+		<Item key="0" value="未实施"/>
+		<Item key="1" value="实施中"/>
+		<Item key="2" value="已完毕"/>
+		<Item key="3" value="已注销"/>
+	</DataMap>
+	<!-- 
+	<DataMap name="PLAY_PLAN" description="播放计划" sql="SELECT planid,planname FROM playplan ORDER BY planid">
+		<Item key="planid" value="planname" />
+	</DataMap>
+	<DataMap name="PLAY_TASK" description="播放任务" sql="SELECT taskid,taskname FROM playtask ORDER BY taskid">
+		<Item key="taskid" value="taskname" />
+	</DataMap>
+	<DataMap name="LAYOUT" description="布局模板" sql="SELECT layoutid,layoutname FROM layout ORDER BY layoutid">
+		<Item key="layoutid" value="layoutname" />
+	</DataMap>
+	<DataMap name="COLUMN_NAME" description="栏目名称" sql="SELECT columnid, name FROM columnsdef ORDER BY columnid">
+		<Item key="columnid" value="name" />
+	</DataMap> -->
+	<DataMap name="Gather_Stat" description="采集服务状态">
+		<Item key="0" value="停止"/>
+		<Item key="1" value="停止中"/>
+		<Item key="2" value="启动中"/>
+		<Item key="3" value="运行"/>
+	</DataMap>
+	<DataMap name="Listen_Stat" description="终端服务监控状态">
+		<Item key="0" value="停止"/>
+		<Item key="1" value="停止中"/>
+		<Item key="2" value="启动中"/>
+		<Item key="3" value="运行"/>
+	</DataMap>
+	<DataMap name="Runresult" description="采集运行结果">
+		<Item key="0" value="成功"/>
+		<Item key="1" value="失败"/>
+	</DataMap>
+	<DataMap name="RGB" description="颜色">
+		<Item key="FFFFFF" value="白色"/>
+		<Item key="FF0000" value="红色"/>
+		<Item key="FFFF00" value="黄色"/>
+		<Item key="00FFFF" value="青色"/>
+		<Item key="0000FF" value="蓝色"/>
+		<Item key="00FF00" value="橙色"/>
+		<Item key="A52A2A" value="褐色"/>
+		<Item key="008000" value="绿色"/>
+		<Item key="800080" value="紫色"/>
+		<Item key="808080" value="灰色"/>
+		<Item key="C0C0C0" value="银色"/>
+		<Item key="000000" value="黑色"/>
+		<Item key="FFD700" value="金色"/>
+		<Item key="FF00FF" value="紫红色"/>
+		<Item key="7FFF00" value="黄绿色"/>
+		<Item key="F5F5DC" value="浅褐色"/>
+	</DataMap>
+	<DataMap name="Info_Type" description="信息类型">
+		<Item key="0" value="视频"/>
+		<Item key="1" value="图片"/>
+		<Item key="2" value="文字"/>
+		<Item key="3" value="网页"/>
+		<Item key="9" value="其它"/>
+	</DataMap>
+	<DataMap name="Media_Path" description="资源文件目录">
+		<Item key="0" value="video"/>
+		<Item key="1" value="picture"/>
+		<Item key="2" value="pad"/>
+		<Item key="3" value="html"/>
+		<Item key="4" value="audio"/>
+		<Item key="5" value="template"/>
+		<Item key="6" value="id"/>
+		<Item key="7" value="playctrl"/>
+		<Item key="8" value="emergence"/>
+		<Item key="9" value="others"/>
+	</DataMap> 
+	<!-- <DataMap name="Template" description="展现模板" sql="SELECT id,name FROM template ORDER BY id">
+		<Item key="id" value="name" />
+	</DataMap> -->
+	<DataMap name="Door_ShowSpeed" description="门楣显示速度">
+		<Item key="100" value="快"/>
+		<Item key="200" value="中"/>
+		<Item key="300" value="慢"/>
+	</DataMap>
+	<DataMap name="Door_ShowType" description="门楣显示方式">
+		<Item key="1" value="从左到右"/>
+		<Item key="2" value="从右到左"/>
+	</DataMap>
+		<DataMap name="media_status" description="素材状态">
+		<Item key="" value="全部"/>
+		<Item key="00" value="正常"/>
+		<Item key="01" value="编辑中"/>
+		<Item key="02" value="审核中"/>
+		<Item key="03" value="已删除"/>
+	</DataMap>
+	<DataMap name="media_opeartion" description="素材操作">
+		<Item key="00" value="新增"/>
+		<Item key="01" value="修改"/>
+		<Item key="02" value="删除"/>
+	</DataMap>
+	<DataMap name="media_opeartion_status" description="素材操作状态">
+		<Item key="00" value="编辑中"/>
+		<Item key="01" value="待审核"/>
+		<Item key="02" value="批准"/>
+		<Item key="03" value="驳回"/>
+	</DataMap>
+	<DataMap name="media_type" description="素材类型">
+		<Item key="wmv" value="视频(wmv)"/>
+		<Item key="mpg" value="视频(mpg)"/>
+		<Item key="avi" value="视频(avi)"/>
+		<Item key="bmp" value="图片(bmp)"/>
+		<Item key="jpg" value="图片(jpg)"/>
+		<Item key="png" value="图片(png)"/>
+	</DataMap>
+	
+	<DataMap name="Role" description="角色" sql="select role_id,role_nm from sys_role order by role_id asc ">
+	<Item key="role_id" value="role_nm" />
+	</DataMap>
+
+    <DataMap name="foodDept" description="饭卡补贴部门" sql="select id，name from FOOD_DEPT order by id asc">
+        <Item key="id" value="name" />
+    </DataMap>
+	
+	<DataMap name="WorkState" description="工作状态">
+		<Item key="0" value="正常" />
+		<Item key="1" value="撤销" />
+	</DataMap>
+	
+	<DataMap name="PunishGrade" description="处分类型">
+		<Item key="0" value="其它" />
+		<Item key="1" value="违规经济处理" />
+		<Item key="2" value="警告" />
+		<Item key="3" value="记过" />
+		<Item key="4" value="记大过" />
+		<Item key="5" value="降级" />
+		<Item key="6" value="撤职" />
+		<Item key="7" value="留用察看" />
+		<Item key="8" value="开除" />
+	</DataMap>
+	
+	<DataMap name="submitState" description="提交状态">
+		<Item key="0" value="未提交" />
+		<Item key="1" value="已提交" />
+	</DataMap>
+	
+	<DataMap name="checkState" description="审核状态">
+		<Item key="0" value="未审核" />
+		<Item key="1" value="已审核" />
+	</DataMap>
+	<DataMap name="sendState" description="分发状态">
+		<Item key="1" value="已分发" />
+		<Item key="0" value="未分发"/>
+	</DataMap>
+    <DataMap name="changStatus" description="变动">
+        <Item key="1" value="变动" />
+        <Item key="0" value="非变动"/>
+    </DataMap>
+
+</DataMapDictionary>

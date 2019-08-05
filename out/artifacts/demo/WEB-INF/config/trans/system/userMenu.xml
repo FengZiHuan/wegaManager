@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Transaction name="userMenu" caption="" version="1.0" description="">
+	<actionflow id="getMenuFlow">
+		<actions>
+			<action	id="start" type="begin"></action>
+			<action id="getMenu" class="com.nantian.iwap.app.action.UserMenuAction">
+			</action>
+			<action id="retData" type="json">
+			</action>
+			<action	id="end" type="end"></action>
+		</actions>
+		<connections>
+			<connection id="connection0" from="start" to="getMenu"/>
+			<connection id="connection1" from="getMenu" to="retData"/>
+			<connection id="connection2" from="retData" to="end"/>
+		</connections>
+	</actionflow>
+</Transaction>

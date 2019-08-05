@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<validators>
+	<validator id="1" name="NOTNULL" class="com.nantian.iwap.databus.validator.impl.NotNullValidator" description="" errorcode="不能为空"/>
+	<validator id="2" name="INTEGER" class="com.nantian.iwap.databus.validator.impl.IntegerValidator" description="" errorcode="不是数字类型"/>
+	<validator id="3" name="EMAIL" class="com.nantian.iwap.databus.validator.impl.EmailValidator" description="" errorcode="不是Email类型"/>
+	<validator id="4" name="DATE" class="com.nantian.iwap.databus.validator.impl.DateValidator" description="" errorcode="不是日期型"/>
+	<validator id="5" name="DOUBLE" class="com.nantian.iwap.databus.validator.impl.DoubleValidator" description="" errorcode="不是小数型"/>
+</validators>

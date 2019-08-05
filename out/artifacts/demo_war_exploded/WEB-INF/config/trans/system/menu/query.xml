@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Transaction name="menuMg" caption="" version="1.0" description="">
+	<actionflow id="">
+		<actions>
+			<action id="start" type="begin"/>
+			<action id="viewPage" type="view">
+				<param name="page">screen/system/menu/query.jsp</param>
+			</action>
+			<action id="doBiz" class="com.nantian.iwap.app.action.system.MenuAction">
+			</action>
+			<action id="addPage" type="view">
+				<param name="page">screen/system/menu/add.jsp</param>
+			</action>
+			<action id="updatePage" type="view">
+				<param name="page">screen/system/menu/update.jsp</param>
+			</action>
+			<action id="json" type="json">
+				<param name="paramType">result</param>
+		    </action>
+			<action id="end" type="end"/>
+		</actions>
+		
+		<connections>
+			<connection id="connection0" from="start" to="viewPage">
+				<condition><![CDATA['${option}'==''||'${option}'=='remove']]></condition>
+			</connection>
+			<connection id="connection1" from="viewPage" to="doBiz"/>
+			<connection id="connection2" from="doBiz" to="json"/>
+			<connection id="connection3" from="json" to="end"/>
+			<connection id="connection4" from="start" to="addPage">
+				<condition><![CDATA['${option}'=='add']]></condition>
+			</connection>
+			<connection id="connection5" from="addPage" to="doBiz"/>
+			<connection id="connection7" from="start" to="updatePage">
+				<condition><![CDATA['${option}'=='save'||'${option}'=='show']]></condition>
+			</connection>
+			<connection id="connection6" from="updatePage" to="doBiz"/>
+		</connections>
+	</actionflow>
+</Transaction>	
